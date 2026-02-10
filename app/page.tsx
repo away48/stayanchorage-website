@@ -185,11 +185,12 @@ export default function Home() {
               
               <ul className="space-y-3">
                 {[
-                  'Walk to downtown restaurants & shops',
-                  'Close to Tony Knowles Coastal Trail',
-                  '15 min to Ted Stevens International Airport',
-                  'Easy access to Chugach State Park',
-                  'Near Alaska Wildlife Conservation Center',
+                  '🚶 Downtown & 5th Ave Mall — 0.3 miles (5 min walk)',
+                  '🎓 UAA (University of Alaska) — 2.5 miles (7 min)',
+                  '🏥 Providence Hospital — 2.0 miles (6 min)',
+                  '✈️ Ted Stevens Airport — 5.5 miles (12 min)',
+                  '🏥 Alaska Regional Hospital — 1.8 miles (5 min)',
+                  '🛤️ Tony Knowles Coastal Trail — 0.5 miles',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <span className="text-blue-500">✓</span>
