@@ -4,7 +4,8 @@
  */
 
 const BEDS24_API = 'https://api.beds24.com/json';
-const PROP_ID = process.env.BEDS24_PROP_ID || '17757';
+const PROP_ID = process.env.BEDS24_PROP_ID || '5780';
+const MIN_NIGHTS = 2;
 
 // Room IDs for Stay Anchorage units
 export const ROOM_IDS = {
@@ -35,11 +36,33 @@ export interface RoomAvailability {
   maxGuests: number;
 }
 
+export interface AvailabilityResponse {
+  rooms: RoomAvailability[];
+  minNights: number;
+  nights: number;
+  error?: string;
+}
+
 export async function getAvailability(
   checkIn: string,
   checkOut: string,
   numAdult: number = 2
-): Promise<RoomAvailability[]> {
+): Promise<AvailabilityResponse> {
+  // Calculate nights
+  const ciDate = new Date(checkIn.slice(0,4) + '-' + checkIn.slice(4,6) + '-' + checkIn.slice(6,8));
+  const coDate = new Date(checkOut.slice(0,4) + '-' + checkOut.slice(4,6) + '-' + checkOut.slice(6,8));
+  const nights = Math.ceil((coDate.getTime() - ciDate.getTime()) / (1000 * 60 * 60 * 24));
+
+  // Check minimum nights requirement
+  if (nights < MIN_NIGHTS) {
+    return {
+      rooms: [],
+      minNights: MIN_NIGHTS,
+      nights,
+      error: `Minimum stay is ${MIN_NIGHTS} nights`,
+    };
+  }
+
   try {
     const response = await fetch(BEDS24_API + '/getAvailabilities', {
       method: 'POST',
@@ -70,16 +93,20 @@ export async function getAvailability(
       });
     }
     
-    return results;
+    return { rooms: results, minNights: MIN_NIGHTS, nights };
   } catch (error) {
     console.error('Beds24 API error:', error);
     // Return default availability on error
-    return Object.entries(ROOM_INFO).map(([roomId, info]) => ({
-      roomId,
-      name: info.name,
-      available: true,
-      price: info.minPrice,
-      maxGuests: info.maxGuests,
-    }));
+    return {
+      rooms: Object.entries(ROOM_INFO).map(([roomId, info]) => ({
+        roomId,
+        name: info.name,
+        available: true,
+        price: info.minPrice,
+        maxGuests: info.maxGuests,
+      })),
+      minNights: MIN_NIGHTS,
+      nights,
+    };
   }
 }
