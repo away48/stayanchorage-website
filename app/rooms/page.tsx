@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 
 // Stay Anchorage units from Beds24 (propId: 17757)
 const properties = [
@@ -18,6 +19,14 @@ const properties = [
     price: 6000, // $60 min from Beds24
     description: 'Cozy downtown apartment perfect for couples or solo travelers. Walking distance to everything.',
     amenities: ['Full Kitchen', 'WiFi', 'Washer/Dryer', 'Free Parking', 'Smart TV'],
+    images: [
+      'https://media.xmlcal.com/pic/p0001/7757/42.png',
+      'https://media.xmlcal.com/pic/p0001/7757/41.png',
+      'https://media.xmlcal.com/pic/p0001/7757/22.png',
+      'https://media.xmlcal.com/pic/p0001/7757/21.png',
+      'https://media.xmlcal.com/pic/p0001/7757/17.png',
+      'https://media.xmlcal.com/pic/p0001/7757/18.png',
+    ],
   },
   {
     id: 'unit-2',
@@ -31,6 +40,14 @@ const properties = [
     price: 6000,
     description: 'Bright and airy one-bedroom with modern finishes. Great for extended stays.',
     amenities: ['Full Kitchen', 'WiFi', 'Washer/Dryer', 'Free Parking', 'Smart TV', 'Workspace'],
+    images: [
+      'https://media.xmlcal.com/pic/p0001/7757/62.png',
+      'https://media.xmlcal.com/pic/p0001/7757/65.png',
+      'https://media.xmlcal.com/pic/p0001/7757/63.png',
+      'https://media.xmlcal.com/pic/p0001/7757/66.png',
+      'https://media.xmlcal.com/pic/p0001/7757/56.png',
+      'https://media.xmlcal.com/pic/p0001/7757/57.png',
+    ],
   },
   {
     id: 'unit-3',
@@ -44,6 +61,14 @@ const properties = [
     price: 6000,
     description: 'Spacious two-bedroom ideal for families or groups. Plenty of room to spread out.',
     amenities: ['Full Kitchen', 'WiFi', 'Washer/Dryer', 'Free Parking', 'Smart TV', 'Dining Area'],
+    images: [
+      'https://media.xmlcal.com/pic/p0001/7757/46.png',
+      'https://media.xmlcal.com/pic/p0001/7757/44.png',
+      'https://media.xmlcal.com/pic/p0001/7757/45.png',
+      'https://media.xmlcal.com/pic/p0001/7757/49.png',
+      'https://media.xmlcal.com/pic/p0001/7757/51.png',
+      'https://media.xmlcal.com/pic/p0001/7757/52.png',
+    ],
   },
   {
     id: 'unit-4',
@@ -57,6 +82,35 @@ const properties = [
     price: 7000, // $70 min from Beds24
     description: 'Corner unit with extra natural light. Perfect for longer stays or small groups.',
     amenities: ['Full Kitchen', 'WiFi', 'Washer/Dryer', 'Free Parking', 'Smart TV', 'Corner Unit'],
+    images: [
+      'https://media.xmlcal.com/pic/p0001/7757/40.png',
+      'https://media.xmlcal.com/pic/p0001/7757/30.png',
+      'https://media.xmlcal.com/pic/p0001/7757/32.png',
+      'https://media.xmlcal.com/pic/p0001/7757/37.png',
+      'https://media.xmlcal.com/pic/p0001/7757/38.png',
+      'https://media.xmlcal.com/pic/p0001/7757/36.png',
+    ],
+  },
+  {
+    id: 'unit-4-2',
+    roomId: '402537',
+    name: 'Unit 4-2',
+    type: '2 Bedroom',
+    beds: '1 King, 1 Queen',
+    guests: 4,
+    bathrooms: 1,
+    sqft: 750,
+    price: 7000,
+    description: 'Spacious two-bedroom with premium finishes. Ideal for families or work groups.',
+    amenities: ['Full Kitchen', 'WiFi', 'Washer/Dryer', 'Free Parking', 'Smart TV', 'Premium Finishes'],
+    images: [
+      'https://media.xmlcal.com/pic/p0001/7757/44.png',
+      'https://media.xmlcal.com/pic/p0001/7757/45.png',
+      'https://media.xmlcal.com/pic/p0001/7757/46.png',
+      'https://media.xmlcal.com/pic/p0001/7757/47.png',
+      'https://media.xmlcal.com/pic/p0001/7757/49.png',
+      'https://media.xmlcal.com/pic/p0001/7757/51.png',
+    ],
   },
 ];
 
@@ -119,7 +173,13 @@ function RoomsContent() {
               className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
             >
               <div className="aspect-[16/10] bg-slate-200 relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-slate-400/40" />
+                <Image
+                  src={property.images[0]}
+                  alt={property.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-sm font-medium">
                   {property.type}
                 </div>

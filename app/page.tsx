@@ -29,7 +29,7 @@ export default function Home() {
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] bg-gradient-to-br from-primary via-slate-800 to-blue-900 flex items-center justify-center">
-        <div className="absolute inset-0 bg-[url('https://media.xmlcal.com/pic/p0000/5780/01.png')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-[url('https://media.xmlcal.com/pic/p0000/7757/01.png')] bg-cover bg-center opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
         
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
@@ -114,10 +114,10 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: 'Unit 1', type: '1 Bedroom', guests: '2 guests', price: 'From $125/night', image: 'https://media.xmlcal.com/pic/p0000/5780/10.png' },
-              { name: 'Unit 2', type: '1 Bedroom', guests: '2 guests', price: 'From $125/night', image: 'https://media.xmlcal.com/pic/p0000/5780/15.png' },
-              { name: 'Unit 3', type: '2 Bedroom', guests: '4 guests', price: 'From $165/night', image: 'https://media.xmlcal.com/pic/p0000/5780/20.png' },
-              { name: 'Unit 4', type: '2 Bedroom', guests: '4 guests', price: 'From $165/night', image: 'https://media.xmlcal.com/pic/p0000/5780/22.png' },
+              { name: 'Unit 1', type: '1 Bedroom', guests: '2 guests', price: 'From $125/night', image: 'https://media.xmlcal.com/pic/p0001/7757/42.png' },
+              { name: 'Unit 2', type: '1 Bedroom', guests: '2 guests', price: 'From $125/night', image: 'https://media.xmlcal.com/pic/p0001/7757/62.png' },
+              { name: 'Unit 3', type: '2 Bedroom', guests: '4 guests', price: 'From $165/night', image: 'https://media.xmlcal.com/pic/p0001/7757/46.png' },
+              { name: 'Unit 4', type: '2 Bedroom', guests: '4 guests', price: 'From $165/night', image: 'https://media.xmlcal.com/pic/p0001/7757/40.png' },
             ].map((unit) => (
               <div key={unit.name} className="group cursor-pointer">
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-200 mb-4 relative">
@@ -201,7 +201,7 @@ export default function Home() {
             </div>
             
             <div className="aspect-video rounded-2xl overflow-hidden shadow-lg bg-slate-200">
-              <div className="w-full h-full bg-[url('https://media.xmlcal.com/pic/p0000/5780/04.png')] bg-cover bg-center" />
+              <div className="w-full h-full bg-[url('https://media.xmlcal.com/pic/p0001/7757/01.png')] bg-cover bg-center" />
             </div>
           </div>
         </div>
