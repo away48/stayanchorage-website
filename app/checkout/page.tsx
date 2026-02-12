@@ -338,7 +338,7 @@ function CheckoutContent() {
 
   if (paymentSuccess) {
     return (
-      <main className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+      <main id="main-content" className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
         <div className="bg-white rounded-2xl p-8 max-w-lg w-full shadow-lg text-center">
           <div className="text-6xl mb-4">✅</div>
           <h1 className="text-2xl font-bold mb-2">Booking Confirmed!</h1>
@@ -364,7 +364,7 @@ function CheckoutContent() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <main id="main-content" className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
           <p className="text-slate-600">Calculating your rates...</p>
@@ -375,7 +375,7 @@ function CheckoutContent() {
 
   if (error || !pricingData) {
     return (
-      <main className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+      <main id="main-content" className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
         <div className="bg-white rounded-2xl p-8 max-w-lg w-full shadow-lg text-center">
           <div className="text-6xl mb-4">😔</div>
           <h1 className="text-xl font-bold mb-2">Unable to Process</h1>
@@ -391,7 +391,7 @@ function CheckoutContent() {
   const { pricing, room } = pricingData;
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main id="main-content" className="min-h-screen bg-slate-50">
       <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="text-xl font-bold text-slate-900">Stay Anchorage</Link>

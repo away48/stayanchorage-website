@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function AccessibilityPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <header className="bg-primary text-white py-6">
         <div className="max-w-4xl mx-auto px-4">
           <Link href="/" className="text-sm hover:underline mb-2 block">&larr; Back to Home</Link>

@@ -26,7 +26,7 @@ export default function Home() {
   const minDate = tomorrow.toISOString().split('T')[0];
 
   return (
-    <main className="min-h-screen">
+    <main id="main-content" className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[80vh] bg-gradient-to-br from-primary via-slate-800 to-blue-900 flex items-center justify-center">
         <div className="absolute inset-0 bg-[url('https://media.xmlcal.com/pic/p0000/7757/01.png')] bg-cover bg-center opacity-30" />
