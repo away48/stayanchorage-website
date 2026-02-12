@@ -239,7 +239,7 @@ export default function Home() {
             <h3 className="font-semibold text-lg mb-4">Stay Anchorage</h3>
             <p className="text-slate-400 text-sm">
               Anchorage, AK 99501<br />
-              <a href="mailto:info@stayanchorage.com" className="hover:text-white transition-colors">info@stayanchorage.com</a>
+              <a href="mailto:info@atwproperties.com" className="hover:text-white transition-colors">info@atwproperties.com</a>
             </p>
           </div>
           <div>
