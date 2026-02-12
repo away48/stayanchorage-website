@@ -190,7 +190,7 @@ export default function Home() {
                   '🏥 Providence Hospital — 3.8 miles (13 min)',
                   '✈️ Ted Stevens Airport — 5.5 miles (12 min)',
                   '🏥 Alaska Regional Hospital — 2.4 miles (9 min)',
-                  '🛤️ Tony Knowles Coastal Trail — 0.5 miles',
+                  '🛤️ Tony Knowles Coastal Trail — 1.3 miles',
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <span className="text-blue-500">✓</span>
