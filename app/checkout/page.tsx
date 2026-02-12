@@ -187,7 +187,7 @@ function ACHPaymentForm({
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Routing Number</label>
         <input
-          type="text"
+          type="text" id="first-name" aria-required="true"
           value={routingNumber}
           onChange={(e) => setRoutingNumber(e.target.value.replace(/\D/g, '').slice(0, 9))}
           className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -200,7 +200,7 @@ function ACHPaymentForm({
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Account Number</label>
         <input
-          type="text"
+          type="text" id="first-name" aria-required="true"
           value={accountNumber}
           onChange={(e) => setAccountNumber(e.target.value.replace(/\D/g, ''))}
           className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -211,7 +211,7 @@ function ACHPaymentForm({
       <div>
         <label className="block text-sm font-medium text-slate-700 mb-1">Confirm Account Number</label>
         <input
-          type="text"
+          type="text" id="first-name" aria-required="true"
           value={confirmAccountNumber}
           onChange={(e) => setConfirmAccountNumber(e.target.value.replace(/\D/g, ''))}
           className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -411,9 +411,9 @@ function CheckoutContent() {
                 <h2 className="text-xl font-bold mb-4">Guest Information</h2>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
+                    <label htmlFor="first-name" className="block text-sm font-medium text-slate-700 mb-1">First Name</label>
                     <input
-                      type="text"
+                      type="text" id="first-name" aria-required="true"
                       value={guestInfo.firstName}
                       onChange={(e) => setGuestInfo({ ...guestInfo, firstName: e.target.value })}
                       className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500"
@@ -421,9 +421,9 @@ function CheckoutContent() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
+                    <label htmlFor="last-name" className="block text-sm font-medium text-slate-700 mb-1">Last Name</label>
                     <input
-                      type="text"
+                      type="text" id="first-name" aria-required="true"
                       value={guestInfo.lastName}
                       onChange={(e) => setGuestInfo({ ...guestInfo, lastName: e.target.value })}
                       className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500"
@@ -432,7 +432,7 @@ function CheckoutContent() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Email</label>
                   <input
                     type="email"
                     value={guestInfo.email}
@@ -442,7 +442,7 @@ function CheckoutContent() {
                   />
                 </div>
                 <div className="mt-4">
-                  <label className="block text-sm font-medium text-slate-700 mb-1">Phone</label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">Phone</label>
                   <input
                     type="tel"
                     value={guestInfo.phone}

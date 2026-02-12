@@ -42,41 +42,47 @@ export default function Home() {
           
           {/* Quick Search */}
           <div className="bg-white/95 backdrop-blur rounded-2xl p-6 md:p-8 shadow-2xl max-w-2xl mx-auto">
-            <form onSubmit={handleSearch} className="grid md:grid-cols-4 gap-4">
+            <form onSubmit={handleSearch} role="search" aria-label="Property search" className="grid md:grid-cols-4 gap-4">
               <div className="text-left">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="check-in" className="block text-sm font-medium text-slate-700 mb-2">
                   Check In
                 </label>
                 <input 
+                  id="check-in"
                   type="date" 
                   min={minDate}
                   value={checkIn}
                   onChange={(e) => setCheckIn(e.target.value)}
                   className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   required
+                  aria-required="true"
                 />
               </div>
               <div className="text-left">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="check-out" className="block text-sm font-medium text-slate-700 mb-2">
                   Check Out
                 </label>
                 <input 
+                  id="check-out"
                   type="date"
                   min={checkIn || minDate}
                   value={checkOut}
                   onChange={(e) => setCheckOut(e.target.value)}
                   className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   required
+                  aria-required="true"
                 />
               </div>
               <div className="text-left">
-                <label className="block text-sm font-medium text-slate-700 mb-2">
+                <label htmlFor="guests" className="block text-sm font-medium text-slate-700 mb-2">
                   Guests
                 </label>
                 <select 
+                  id="guests"
                   value={guests}
                   onChange={(e) => setGuests(e.target.value)}
                   className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  aria-label="Number of guests"
                 >
                   <option value="1">1 Guest</option>
                   <option value="2">2 Guests</option>
@@ -233,7 +239,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 bg-slate-900 text-white">
+      <footer role="contentinfo" className="py-12 px-4 bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           <div>
             <h3 className="font-semibold text-lg mb-4">Stay Anchorage</h3>
